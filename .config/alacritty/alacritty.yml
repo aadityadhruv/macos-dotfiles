@@ -23,7 +23,7 @@ env:
   # available, otherwise `xterm-256color` is used.
   TERM: alacritty 
 
-#window:
+window:
   # Window dimensions (changes require restart)
   #
   # Number of lines/columns (not pixels) in the terminal. The number of columns
@@ -67,7 +67,7 @@ env:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  #opacity: 1.0
+  opacity: 0.97
 
   # Startup Mode (changes require restart)
   #
@@ -117,7 +117,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: MesloLGS NF 
+    family: MesloLGS NF
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -156,7 +156,7 @@ font:
     style: Bold Italic
 
   # Point size
-  size: 11.0
+  size: 12.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -192,7 +192,7 @@ font:
 colors:
   # Default colors
   primary:
-    background: '#282828'
+    background: '#1d2021'
     foreground: '#ebdbb2'
 
     # Bright and dim foreground colors
@@ -746,6 +746,7 @@ colors:
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
 key_bindings:
+- { key : N, mods: Super, action: CreateNewWindow }
   #- { key: Paste,                                       action: Paste          }
   #- { key: Copy,                                        action: Copy           }
   #- { key: L,         mods: Control,                    action: ClearLogNotice }
@@ -851,12 +852,10 @@ key_bindings:
   #- { key: M,              mods: Command,                    action: Minimize              }
   #- { key: Q,              mods: Command,                    action: Quit                  }
   #- { key: W,              mods: Command,                    action: Quit                  }
-  - { key: N,              mods: Command,                    action: CreateNewWindow      }
+  #- { key: N,              mods: Command,                    action: SpawnNewInstance      }
   #- { key: F,              mods: Command|Control,            action: ToggleFullscreen      }
   #- { key: F,              mods: Command, mode: ~Search,     action: SearchForward         }
   #- { key: B,              mods: Command, mode: ~Search,     action: SearchBackward        }
-
-
 
 #debug:
   # Display the time it takes to redraw each frame.
@@ -878,3 +877,4 @@ key_bindings:
 
   # Print all received window events.
   #print_events: false
+
